@@ -10,19 +10,20 @@
 </head>
 <body>
         <div class="createbox">
-            <form class="form" id="signin">
 
                 <h1 class="form__title">Login</h1>
+
+                <div class="form__error" id="form__error-var"></div>
 
                 <div class="form__input-group">
                     <label for=""><strong>Username</strong></label>
                     <br>
-                    <input type="text" id="" placeholder="Username">
+                    <input type="text" id="username" placeholder="Username">
                 </div>
                 <div class="form__input-group">
                     <label for=""><strong>Password</strong></label>
                     <br>
-                    <input type="Password" name="" id="" placeholder="Password">
+                    <input type="Password" name="" id="password" placeholder="Password">
                 </div>
                     
                 <button class="form__button" type="submit" onclick="login()">Login</button>
@@ -35,6 +36,6 @@
             
         </div>
     
-    
+    <script src="login.js"></script>
 </body>
 </html>

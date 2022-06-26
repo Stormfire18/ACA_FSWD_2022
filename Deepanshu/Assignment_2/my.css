@@ -3,7 +3,7 @@
 body{
     --color-primary: aquamarine;
     --color-box: #FFFFFF;
-    --color-error: #FF9494;
+    --color-error: #c40202;
     --color-input: #808080;
     --color-button: #00FFFF;
     
@@ -12,8 +12,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-primary);
-    font-size: 18px;
+    font-size: 22px;
+    background-image: url("florian-olivo-4hbJ-eymZ1o-unsplash.jpg") ;
+    background-size: 100%;
     }
 
 
@@ -22,19 +23,13 @@ body{
     border-radius: 5px;
     position: relative;
     margin: 1rem;
-    padding: 2rem;
+    padding: 1rem 4rem 1rem;
     top:70px;
-    
 }
 
 .form__title{
     text-align: center;
-}
-
-.form__message{
-    text-align: center;
-    color: var(--color-error);
-    margin-bottom: 1rem;
+    margin: 20px,0;
 }
 
 .form__button,
@@ -54,6 +49,15 @@ body{
     padding: 0.5rem 2rem;
 }
 
+.form__error,
+.responsets{
+    font-size: 0.9rem;
+    color: var(--color-error);
+}
+
+.form__error1{
+    display: none;
+}
 
 .takeinput{
     width: 100%;

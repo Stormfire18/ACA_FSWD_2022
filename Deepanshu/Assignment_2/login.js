@@ -3,8 +3,7 @@ var requestBody={
     username: document.getElementById('username').value,
     password: document.getElementById('password').value,
 }
-
-console.log(serverreq);
+var respo = document.getElementById("form__error-var");
 fetch("https://yournoteserver.herokuapp.com/users/login",{
     method:"Post",
     body: new URLSearchParams(requestBody),
@@ -13,26 +12,23 @@ fetch("https://yournoteserver.herokuapp.com/users/login",{
                         'Access-Control-Request-Method': 'Post',
                         'Access-Control-Request-Headers': 'origin',
                         'Origin': 'https://yournoteserver.herokuapp.com/',
-    },
-}
-).then((res) => {
-    console.log(res)
-    if(res.err == "user not found"){
-        res.setHeader('Content-Type','application/json');
-        res.send({err:'user not found'});
-
     }
-    else if(res.err == "incorrect password"){
-        res.setHeader('Content-Type','application/json');
-        res.send({err:'username and password required'});
+}).then((response) => {
+    return response.json();
+}).then((response) => {
+    console.log(response);
+    if(response.err === "user not found"){
+        respo.innerHTML="User not found";
+        respo.style.color="red";
     }
-    else if(res.statusCode===200){
-        var token=authenticate.getToken({_id:user._id})
-
-        response.setHeader('Content-Type', 'application/json');
-        res.send({success:true,token:token})
+    else if(response.err === "incorrect password"){
+        respo.innerHTML="Incorrect password";
+        respo.style.color="red";
     }
-}).catch((err) => {
-    console.log(err)
+    else if(response.success){
+        respo.innerHTML="Login successful";
+        respo.style.color="green";
+    }
+    console.log(respo);
 })
 }

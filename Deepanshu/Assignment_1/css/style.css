@@ -14,11 +14,11 @@
             color:#373677;
         }
         h2{
-            color:#66BFBF;
+            color:#373677;
             font-family: Garamond;
         }
         h3{
-            color:#66BFBF;
+            color:#373677;
             font-family: Garamond;
         }
         .top-container{
@@ -26,7 +26,13 @@
             font-family:'Trebuchet MS', sans-serif;
             border-radius: 15px;
         }
+        .middle-container{
+            margin: 0px 15px;
+        }
+        .bottom-container{
+            margin:10px 15px;
+        }
         button{
-            background-color: white;
-            border: 2px solid violet;
+            background-color: rgb(66, 106, 216);
+            color: #EAF6F6;
         }
